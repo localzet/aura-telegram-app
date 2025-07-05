@@ -1,0 +1,69 @@
+{
+  "main": {
+    "page": {
+      "component": {
+        "buy": "Приобрести подписку",
+        "no-sub": "У вас нет подписки",
+        "podpiska": "Подписка",
+        "error-connect": "Ошибка подключения",
+        "refresh": "Обновить"
+      }
+    }
+  },
+  "installation-guide": {
+    "widget": {
+      "add-subscription": "Добавить подписку",
+      "add-subscription-button": "Добавить подписку",
+      "connect-and-use": "Подключите и используйте",
+      "installation": "Установка",
+      "select-device": "Выберите устройство",
+      "pc": "ПК",
+      "no-data-for-cryptolink": "Нет конфигурации для приложений поддерживающих криптоссылки",
+      "no-data-for-app": "Нет конфигурации для данного типа устройств"
+    },
+    "ios": {
+      "widget": {
+        "install-and-open-app": "Установите и откройте {appName}"
+      }
+    },
+    "android": {
+      "widget": {
+        "install-and-open-app": "Установите и откройте {appName}"
+      }
+    },
+    "pc": {
+      "widget": {
+        "download-app": "Скачайте {appName}"
+      }
+    }
+  },
+  "subscription-link": {
+    "widget": {
+      "link-copied": "Ссылка скопирована",
+      "link-copied-to-clipboard": "Ссылка скопирована в буфер обмена",
+      "get-link": "Получить ссылку",
+      "scan-qr-code": "Сканируйте QR-код выше в клиенте",
+      "line-1": "Простое добавление подписки в любой клиент. Есть и другой вариант: скопируйте ссылку ниже и вставьте в клиент.",
+      "copy-link": "Скопировать ссылку"
+    }
+  },
+  "subscription-info": {
+    "widget": {
+      "name": "Имя пользователя",
+      "status": "Статус",
+      "active": "Активна",
+      "inactive": "Неактивна",
+      "expires": "Истекает",
+      "at": "В",
+      "bandwidth": "Трафик"
+    }
+  },
+  "get-expiration-text": {
+    "util": {
+      "expires-in": "Истекает {expiration}",
+      "expired": "Истекла {expiration}",
+      "unknown": "Неизвестно",
+      "infinity": "Действителен до: ∞"
+    }
+  }
+}
