@@ -35,6 +35,11 @@ jobs:
       - name: 🔧 Checkout source code
         uses: actions/checkout@v4
 
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
       - name: 🔧 Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -60,6 +65,7 @@ jobs:
           context: .
           file: Dockerfile
           platforms: linux/amd64, linux/arm64
+          push: true
           tags: |
             localzet/aura-telegram-app:latest
             localzet/aura-telegram-app:${{github.ref_name}}
