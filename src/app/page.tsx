@@ -8,7 +8,6 @@ import { fetchAppEnv } from '@/api/fetchAppEnv'
 import { initData, useSignal } from '@telegram-apps/sdk-react'
 import { Loading } from '@/components/Loading/Loading'
 import { ofetch } from 'ofetch'
-import { LocaleSwitcher } from '@/components/LocaleSwitcher/LocaleSwitcher'
 import { SubscribeCta } from '@/components/SubscribeCTA/SubscribeCTA'
 import { ErrorConnection } from '@/components/ErrorConnection/ErrorConnection'
 import { SubscriptionQR } from '@/components/SubQR/SubQR'
@@ -148,7 +147,6 @@ export default function Home() {
                             {!publicEnv?.cryptoLink && (
                                 <SubscriptionQR subscription={subscription.subscriptionUrl} />
                             )}
-                            <LocaleSwitcher />
                         </Group>
                     </Group>
                     <Stack gap="xl">
