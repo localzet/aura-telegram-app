@@ -5,7 +5,7 @@ import { getLocale } from './locale'
 import type { Locale } from './types'
 
 const i18nRequestConfig = getRequestConfig(async () => {
-    const locale = await getLocale() as Locale
+    const locale = (await getLocale()) as Locale
 
     return {
         locale,

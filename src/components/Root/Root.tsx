@@ -20,7 +20,6 @@ import { setLocale } from '@/core/i18n/locale'
 import { init } from '@/core/init'
 import { theme } from '@/config/theme'
 
-
 function RootInner({ children }: PropsWithChildren) {
     const lp = useLaunchParams()
     const debug = lp.startParam === 'debug'
@@ -28,9 +27,7 @@ function RootInner({ children }: PropsWithChildren) {
     if (miniApp.mount.isAvailable()) {
         miniApp.mount()
     }
-    if (
-        miniApp.setHeaderColor.isAvailable()
-    ) {
+    if (miniApp.setHeaderColor.isAvailable()) {
         miniApp.setHeaderColor('#161b22')
         miniApp.headerColor()
     }
@@ -55,11 +52,7 @@ function RootInner({ children }: PropsWithChildren) {
         initDataUser && setLocale(initDataUser.languageCode)
     }, [initDataUser])
 
-    return (
-        <>
-            {children}
-        </>
-    )
+    return <>{children}</>
 }
 
 export function Root(props: PropsWithChildren) {

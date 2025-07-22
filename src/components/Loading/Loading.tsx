@@ -1,10 +1,10 @@
 import { Center, Progress, Stack, Text } from '@mantine/core'
 
 export function Loading({
-                            height = '100vh',
-                            text = undefined,
-                            value = 100
-                        }: {
+    height = '100vh',
+    text = undefined,
+    value = 100
+}: {
     height?: string
     text?: string
     value?: number
