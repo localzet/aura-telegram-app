@@ -1,13 +1,17 @@
 version = 1
 
 [[analyzers]]
-name = "docker"
-
-[[analyzers]]
-name = "go"
+name = "javascript"
 
   [analyzers.meta]
-  import_root = "github.com/localzet/aura-telegram-app"
+  plugins = ["react"]
+  environment = [
+    "nodejs",
+    "browser"
+  ]
+
+[[analyzers]]
+name = "docker"
 
 [[transformers]]
-name = "gofmt"
+name = "prettier"
