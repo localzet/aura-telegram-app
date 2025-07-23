@@ -4,9 +4,7 @@ import React from 'react'
 
 import { timeZone } from './config'
 
-const I18nProvider: React.FC<React.PropsWithChildren> = async ({
-                                                                   children
-                                                               }) => {
+const I18nProvider: React.FC<React.PropsWithChildren> = async ({ children }) => {
     const messages = await getMessages()
     return (
         <NextIntlClientProvider messages={messages} timeZone={timeZone}>
