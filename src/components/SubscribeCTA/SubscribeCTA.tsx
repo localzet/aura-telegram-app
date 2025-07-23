@@ -10,7 +10,7 @@ export function SubscribeCta({ buyLink }: { buyLink: string | undefined }) {
     return (
         <Stack gap="xl">
             <Box className={classes.animateBox} w={200}>
-                <Lottie animationData={noSubAnimate} loop={true} />
+                <Lottie animationData={noSubAnimate} loop />
             </Box>
             <Button component="a" href={buyLink} target="_blank" color="cyan">{t('main.page.component.buy')}</Button>
         </Stack>

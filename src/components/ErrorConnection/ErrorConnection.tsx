@@ -14,7 +14,7 @@ export function ErrorConnection() {
     return (
         <Stack gap="xl">
             <Box className={classes.animateBox} w={200}>
-                <Lottie animationData={errorConnect} loop={true} />
+                <Lottie animationData={errorConnect} loop />
             </Box>
             <Button onClick={refreshPage} color="cyan">{t('main.page.component.refresh')}</Button>
         </Stack>
