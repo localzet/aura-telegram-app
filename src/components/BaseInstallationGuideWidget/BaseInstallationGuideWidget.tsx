@@ -257,7 +257,7 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                                     : 'installation-guide.widget.no-data-for-app'
                             )}{' '}
                         </Text>
-                        <Lottie animationData={noDataAnimate} loop={true} />
+                        <Lottie animationData={noDataAnimate} loop />
                     </div>
                 </Box>
             )}
