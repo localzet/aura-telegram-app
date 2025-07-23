@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Box, Button, Group, Text, ThemeIcon, Timeline } from '@mantine/core'
-import { IconCheck, IconCloudDownload, IconDownload, IconInfoCircle, IconStar } from '@tabler/icons-react'
+import {
+    IconCheck,
+    IconCloudDownload,
+    IconDownload,
+    IconInfoCircle,
+    IconStar
+} from '@tabler/icons-react'
 import { IAppConfig } from '@/types/appList'
 import { IPlatformGuideProps } from '@/types/platforGuide'
 import Lottie from 'lottie-react'
 import noDataAnimate from '@public/assets/anamations/no-data-config.json'
-
 
 export interface IBaseGuideProps extends IPlatformGuideProps {
     firstStepTitle: string
@@ -15,7 +20,6 @@ export interface IBaseGuideProps extends IPlatformGuideProps {
     currentLang: 'en' | 'fa' | 'ru'
     isCryptoLinkEnabled: boolean | undefined
 }
-
 
 export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
     const t = useTranslations()
@@ -61,7 +65,6 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
 
         return stepData.description[currentLang] || stepData.description[currentLang] || ''
     }
-
 
     const getButtonText = (button: { buttonText: { en: string; fa: string; ru: string } }) => {
         return button.buttonText[currentLang] || button.buttonText[currentLang] || ''
@@ -124,7 +127,7 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                         {selectedApp && renderFirstStepButton(selectedApp)}
                     </Timeline.Item>
 
-                    {selectedApp && selectedApp.additionalBeforeAddSubscriptionStep && (
+                    {selectedApp?.additionalBeforeAddSubscriptionStep && (
                         <Timeline.Item
                             bullet={
                                 <ThemeIcon color="teal.5" radius="xl" size={26}>
@@ -139,7 +142,7 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                             <Text c="dimmed" mb={16} size="sm">
                                 {selectedApp.additionalBeforeAddSubscriptionStep.description[
                                     currentLang
-                                    ] || selectedApp.additionalBeforeAddSubscriptionStep.description.en}
+                                ] || selectedApp.additionalBeforeAddSubscriptionStep.description.en}
                             </Text>
                             <Group>
                                 {selectedApp.additionalBeforeAddSubscriptionStep.buttons.map(
@@ -187,7 +190,7 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                         )}
                     </Timeline.Item>
 
-                    {selectedApp && selectedApp.additionalAfterAddSubscriptionStep && (
+                    {selectedApp?.additionalAfterAddSubscriptionStep && (
                         <Timeline.Item
                             bullet={
                                 <ThemeIcon color="teal.5" radius="xl" size={26}>
@@ -202,7 +205,7 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                             <Text c="dimmed" mb={16} size="sm">
                                 {selectedApp.additionalAfterAddSubscriptionStep.description[
                                     currentLang
-                                    ] || selectedApp.additionalAfterAddSubscriptionStep.description.en}
+                                ] || selectedApp.additionalAfterAddSubscriptionStep.description.en}
                             </Text>
                             <Group>
                                 {selectedApp.additionalAfterAddSubscriptionStep.buttons.map(
@@ -238,10 +241,22 @@ export const BaseInstallationGuideWidget = (props: IBaseGuideProps) => {
                     </Timeline.Item>
                 </Timeline>
             ) : (
-                <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '40px' }}>
+                <Box
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginTop: '40px'
+                    }}
+                >
                     <div>
                         <Text ta="center" fw="700" className="mb-3">
-                            {t(isCryptoLinkEnabled ? 'installation-guide.widget.no-data-for-cryptolink' : 'installation-guide.widget.no-data-for-app')}            </Text>
+                            {t(
+                                isCryptoLinkEnabled
+                                    ? 'installation-guide.widget.no-data-for-cryptolink'
+                                    : 'installation-guide.widget.no-data-for-app'
+                            )}{' '}
+                        </Text>
                         <Lottie animationData={noDataAnimate} loop={true} />
                     </div>
                 </Box>
