@@ -41,7 +41,7 @@ export function getExpirationTextUtil(
     })
 }
 
-export function bytesToGigabytes(bytes: number | string, decimals: number = 2): string {
+export function bytesToGigabytes(bytes: number | string, decimals = 2): string {
     if (Number(bytes) < 0) {
         throw new Error('Количество байтов не может быть отрицательным')
     }
