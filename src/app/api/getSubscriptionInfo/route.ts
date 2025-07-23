@@ -1,4 +1,7 @@
-import { GetSubscriptionInfoByShortUuidCommand, GetUserByTelegramIdCommand } from '@localzet/aura-contract'
+import {
+    GetSubscriptionInfoByShortUuidCommand,
+    GetUserByTelegramIdCommand
+} from '@localzet/aura-contract'
 import axios, { AxiosError } from 'axios'
 
 const baseUrl = process.env.AURA_PANEL_URL
