@@ -19,7 +19,7 @@
     "@localzet/aura-contract": "1.0.0",
     "@tabler/icons-react": "^3.31.0",
     "@telegram-apps/sdk-react": "^2.0.22",
-    "axios": "^1.9.0",
+    "axios": "^1.12.0",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",
     "eruda": "^3.0.1",
