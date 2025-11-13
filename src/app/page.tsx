@@ -67,7 +67,6 @@ export default function Home() {
                     if (user) {
                         setSubscription(user)
                     }
-
                 } catch (error) {
                     const errorMessage =
                         error instanceof Error ? error.message : 'Unknown error occurred'

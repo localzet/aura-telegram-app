@@ -15,7 +15,7 @@ const getLocale = async () => {
 }
 
 const setLocale = async (locale?: string) => {
-    cookies().set(COOKIE_NAME, locale as Locale || defaultLocale)
+    cookies().set(COOKIE_NAME, (locale as Locale) || defaultLocale)
 }
 
 export { getLocale, setLocale }

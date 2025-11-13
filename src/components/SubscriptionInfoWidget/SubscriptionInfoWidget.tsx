@@ -2,7 +2,14 @@ import { useLocale, useTranslations } from 'next-intl'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { Accordion, rgba, SimpleGrid, Stack, Text, ThemeIcon } from '@mantine/core'
-import { IconAlertCircle, IconArrowsUpDown, IconCalendar, IconCheck, IconUser, IconX } from '@tabler/icons-react'
+import {
+    IconAlertCircle,
+    IconArrowsUpDown,
+    IconCalendar,
+    IconCheck,
+    IconUser,
+    IconX
+} from '@tabler/icons-react'
 import { InfoBlock } from '@/components/InfoBlock/InfoBlock'
 
 import { calculateDaysLeft, getExpirationTextUtil } from '@/lib/utils'
@@ -11,8 +18,8 @@ import { GetSubscriptionInfoByShortUuidCommand } from '@localzet/aura-contract'
 dayjs.extend(relativeTime)
 
 export const SubscriptionInfoWidget = ({
-                                           user
-                                       }: {
+    user
+}: {
     user: GetSubscriptionInfoByShortUuidCommand.Response['response']
 }) => {
     const t = useTranslations()
@@ -133,9 +140,7 @@ export const SubscriptionInfoWidget = ({
                             icon={<IconArrowsUpDown size={20} />}
                             title={t('subscription-info.widget.bandwidth')}
                             value={`${user.user.trafficUsed} / ${
-                                user.user.trafficLimit === '0'
-                                    ? '∞'
-                                    : user.user.trafficLimit
+                                user.user.trafficLimit === '0' ? '∞' : user.user.trafficLimit
                             }`}
                         />
                     </SimpleGrid>

@@ -5,18 +5,23 @@ import { useLocale, useTranslations } from 'next-intl'
 
 import { Box, Button, Group, Select, Text } from '@mantine/core'
 import { useOs } from '@mantine/hooks'
-import { IconBrandAndroid, IconBrandApple, IconDeviceDesktop, IconExternalLink } from '@tabler/icons-react'
+import {
+    IconBrandAndroid,
+    IconBrandApple,
+    IconDeviceDesktop,
+    IconExternalLink
+} from '@tabler/icons-react'
 
 import { IAppConfig, IPlatformConfig } from '@/types/appList'
 import { BaseInstallationGuideWidget } from '@/components/BaseInstallationGuideWidget/BaseInstallationGuideWidget'
 import { GetSubscriptionInfoByShortUuidCommand } from '@localzet/aura-contract'
 
 export const InstallationGuideWidget = ({
-                                            appsConfig,
-                                            user,
-                                            isCryptoLinkEnabled,
-                                            redirectLink
-                                        }: {
+    appsConfig,
+    user,
+    isCryptoLinkEnabled,
+    redirectLink
+}: {
     appsConfig: IPlatformConfig
     user: GetSubscriptionInfoByShortUuidCommand.Response['response']
     isCryptoLinkEnabled: boolean | undefined
@@ -34,12 +39,11 @@ export const InstallationGuideWidget = ({
     // Otherwise use the full appsConfig
     const filteredConfig = isCryptoLinkEnabled
         ? {
-            ios: appsConfig.ios.filter((app) => app.urlScheme.startsWith('happ')),
-            android: appsConfig.android.filter((app) => app.urlScheme.startsWith('happ')),
-            pc: appsConfig.pc.filter((app) => app.urlScheme.startsWith('happ'))
-        }
+              ios: appsConfig.ios.filter((app) => app.urlScheme.startsWith('happ')),
+              android: appsConfig.android.filter((app) => app.urlScheme.startsWith('happ')),
+              pc: appsConfig.pc.filter((app) => app.urlScheme.startsWith('happ'))
+          }
         : appsConfig
-
 
     useEffect(() => {
         if (lang) {
@@ -81,7 +85,6 @@ export const InstallationGuideWidget = ({
         android: filteredConfig.android && filteredConfig.android.length > 0,
         pc: filteredConfig.pc && filteredConfig.pc.length > 0
     }
-
 
     const { subscriptionUrl } = user
 

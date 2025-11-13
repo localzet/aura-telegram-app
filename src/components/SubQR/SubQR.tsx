@@ -29,11 +29,13 @@ export const SubscriptionQR = ({ subscription }: { subscription: string }) => {
 
     if (!subscription) return null
 
-
     return (
         <>
-            <Modal opened={open} onClose={() => setOpen(false)} title={t('subscription-link.widget.get-link')}>
-
+            <Modal
+                opened={open}
+                onClose={() => setOpen(false)}
+                title={t('subscription-link.widget.get-link')}
+            >
                 {subscriptionQrCode && (
                     <Stack align="center">
                         <Image
@@ -51,12 +53,10 @@ export const SubscriptionQR = ({ subscription }: { subscription: string }) => {
                         </Button>
                     </Stack>
                 )}
-
             </Modal>
             <Button
                 onClick={() => {
                     setOpen(true)
-
 
                     modals.open({
                         centered: true,
